@@ -1,0 +1,224 @@
+[
+  {
+    "feature": "Age",
+    "label": "Age (years)",
+    "weight": 6.67,
+    "type": "numeric",
+    "options": []
+  },
+  {
+    "feature": "FamilyHistoryAlzheimers",
+    "label": "Family history of Alzheimer's?",
+    "weight": 6.67,
+    "type": "binary",
+    "options": [
+      {
+        "label": "No",
+        "value": 0
+      },
+      {
+        "label": "Yes",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "feature": "MemoryComplaints",
+    "label": "Memory complaints?",
+    "weight": 6.67,
+    "type": "binary",
+    "options": [
+      {
+        "label": "No",
+        "value": 0
+      },
+      {
+        "label": "Yes",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "feature": "Forgetfulness",
+    "label": "Forgetfulness?",
+    "weight": 6.67,
+    "type": "binary",
+    "options": [
+      {
+        "label": "No",
+        "value": 0
+      },
+      {
+        "label": "Yes",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "feature": "Confusion",
+    "label": "Confusion episodes?",
+    "weight": 6.67,
+    "type": "binary",
+    "options": [
+      {
+        "label": "No",
+        "value": 0
+      },
+      {
+        "label": "Yes",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "feature": "Disorientation",
+    "label": "Disorientation?",
+    "weight": 6.67,
+    "type": "binary",
+    "options": [
+      {
+        "label": "No",
+        "value": 0
+      },
+      {
+        "label": "Yes",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "feature": "DifficultyCompletingTasks",
+    "label": "Difficulty completing tasks?",
+    "weight": 6.67,
+    "type": "binary",
+    "options": [
+      {
+        "label": "No",
+        "value": 0
+      },
+      {
+        "label": "Yes",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "feature": "CanRecallDate",
+    "label": "Can you recall today's date, day, and where you are?",
+    "weight": 6.67,
+    "type": "binary",
+    "options": [
+      {
+        "label": "No",
+        "value": 0
+      },
+      {
+        "label": "Yes",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "feature": "CanRecallWords",
+    "label": "Can you remember 3 objects after a few minutes?",
+    "weight": 6.67,
+    "type": "binary",
+    "options": [
+      {
+        "label": "No",
+        "value": 0
+      },
+      {
+        "label": "Yes",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "feature": "DifficultyFollowing",
+    "label": "Difficulty following conversations?",
+    "weight": 6.67,
+    "type": "binary",
+    "options": [
+      {
+        "label": "No",
+        "value": 0
+      },
+      {
+        "label": "Yes",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "feature": "GetsLost",
+    "label": "Gets lost in familiar places?",
+    "weight": 6.67,
+    "type": "binary",
+    "options": [
+      {
+        "label": "No",
+        "value": 0
+      },
+      {
+        "label": "Yes",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "feature": "ManagesFinances",
+    "label": "Can manage finances and bills?",
+    "weight": 6.67,
+    "type": "binary",
+    "options": [
+      {
+        "label": "No",
+        "value": 0
+      },
+      {
+        "label": "Yes",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "feature": "ManagesMeds",
+    "label": "Can take medication correctly?",
+    "weight": 6.67,
+    "type": "binary",
+    "options": [
+      {
+        "label": "No",
+        "value": 0
+      },
+      {
+        "label": "Yes",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "feature": "CanTravel",
+    "label": "Can travel independently?",
+    "weight": 6.67,
+    "type": "binary",
+    "options": [
+      {
+        "label": "No",
+        "value": 0
+      },
+      {
+        "label": "Yes",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "feature": "PhysicalActivity",
+    "label": "Weekly exercise hours",
+    "weight": 6.67,
+    "type": "numeric",
+    "options": []
+  }
+]
