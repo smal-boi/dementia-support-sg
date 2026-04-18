@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dementia Support SG</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand-wrap">
+        <div class="brand-icon">DS</div>
+        <div>
+          <div class="brand">Dementia Support SG</div>
+          <div class="brand-sub">AI screening, daily exercises, and caregiver tracking</div>
+        </div>
+      </div>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <button class="nav-btn active" data-view-target="homeView">Home</button>
+        <button class="nav-btn" data-view-target="quizView">Diagnostic Quiz</button>
+        <button class="nav-btn" data-view-target="gamesView">Daily Games</button>
+        <button class="nav-btn" data-view-target="trackerView">Tracker</button>
+        <button class="nav-btn" data-view-target="instructionsView">Instructions</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container app-shell">
+    <section id="homeView" class="view active">
+      <div class="hero-panel card">
+        <div>
+          <span class="pill">Singapore-focused dementia support prototype</span>
+          <h1>A calmer, simpler support website for dementia screening and caregiver follow-up</h1>
+          <p class="lead">
+            This website guides users step by step through a diagnostic quiz, offers simple daily brain games,
+            and keeps a local tracker so families can monitor changes over time on one device.
+          </p>
+          <div class="hero-actions">
+            <button class="button primary" data-view-target="quizView">Start diagnostic quiz</button>
+            <button class="button secondary" data-view-target="gamesView">Open daily games</button>
+          </div>
+        </div>
+        <div class="hero-side card soft-card">
+          <h3>How this website is organised</h3>
+          <div class="flow-list">
+            <div class="flow-item flow-home">Home Page</div>
+            <div class="flow-row">
+              <div class="flow-item flow-purple">Diagnostic Quiz</div>
+              <div class="flow-item flow-cyan">Instructions</div>
+            </div>
+            <div class="flow-row">
+              <div class="flow-item flow-purple">Diagnosis</div>
+              <div class="flow-item flow-blue">Daily Games</div>
+            </div>
+            <div class="flow-row">
+              <div class="flow-item flow-blue">Save to Local Storage</div>
+              <div class="flow-item flow-cyan">Tracker Page</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="stats-grid">
+        <article class="card stat-card">
+          <span class="eyebrow">Dataset rows</span>
+          <h2 id="statRows">—</h2>
+        </article>
+        <article class="card stat-card">
+          <span class="eyebrow">Best model AUC</span>
+          <h2 id="statAuc">—</h2>
+        </article>
+        <article class="card stat-card">
+          <span class="eyebrow">Saved quiz records</span>
+          <h2 id="statSaved">0</h2>
+        </article>
+        <article class="card stat-card">
+          <span class="eyebrow">Daily game records</span>
+          <h2 id="statGames">0</h2>
+        </article>
+      </section>
+
+      <section class="hub-grid">
+        <button class="hub-card card" data-view-target="instructionsView">
+          <span class="eyebrow">Step 1</span>
+          <h3>Instructions</h3>
+          <p>Simple guidance for patients and caregivers before using the tool.</p>
+        </button>
+        <button class="hub-card card" data-view-target="quizView">
+          <span class="eyebrow">Step 2</span>
+          <h3>Diagnostic Quiz</h3>
+          <p>A large-text, question-by-question screening flow to reduce confusion.</p>
+        </button>
+        <button class="hub-card card" data-view-target="gamesView">
+          <span class="eyebrow">Step 3</span>
+          <h3>Daily Games</h3>
+          <p>Short memory and attention games that can be repeated every day.</p>
+        </button>
+        <button class="hub-card card" data-view-target="trackerView">
+          <span class="eyebrow">Step 4</span>
+          <h3>Tracker Page</h3>
+          <p>Review past screening results and daily exercise scores saved on this device.</p>
+        </button>
+      </section>
+    </section>
+
+    <section id="instructionsView" class="view">
+      <div class="card page-card narrow">
+        <span class="eyebrow">Instructions</span>
+        <h2>Before using the website</h2>
+        <div class="info-list">
+          <div class="info-row">
+            <h3>1. Use with a caregiver if possible</h3>
+            <p>The questions are easier when answered together with a family member or trusted caregiver.</p>
+          </div>
+          <div class="info-row">
+            <h3>2. Answer based on current daily life</h3>
+            <p>Choose the answer that best reflects how the person is doing now, not how they were years ago.</p>
+          </div>
+          <div class="info-row">
+            <h3>3. This is a support tool, not a diagnosis</h3>
+            <p>The AI estimate helps flag risk patterns. A doctor or memory clinic is needed for diagnosis.</p>
+          </div>
+          <div class="info-row">
+            <h3>4. Results stay on this device</h3>
+            <p>Screening results and daily game scores are stored in this browser so progress can be tracked privately.</p>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <button class="button primary" data-view-target="quizView">Continue to quiz</button>
+          <button class="button secondary" data-view-target="homeView">Back home</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="quizView" class="view">
+      <div class="card page-card narrow">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Diagnostic Quiz</span>
+            <h2>Question <span id="questionCurrent">1</span> of <span id="questionTotal">1</span></h2>
+            <p id="questionGroup" class="muted-line">Please answer one question at a time.</p>
+          </div>
+          <button id="fillDemoBtn" class="button ghost" type="button">Load example</button>
+        </div>
+
+        <div class="progress-shell" aria-hidden="true">
+          <div id="quizProgressBar" class="progress-bar"></div>
+        </div>
+
+        <form id="quizWizardForm">
+          <div id="questionCard" class="question-card"></div>
+
+          <div class="wizard-actions">
+            <button id="prevQuestionBtn" class="button ghost" type="button">Previous</button>
+            <button id="nextQuestionBtn" class="button primary" type="button">Next</button>
+            <button id="submitQuizBtn" class="button primary hidden" type="submit">Run AI screening</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="diagnosisView" class="view">
+      <div class="card page-card narrow">
+        <span class="eyebrow">Diagnosis</span>
+        <h2>Latest screening result</h2>
+        <div id="resultCard" class="result"></div>
+        <div class="hero-actions top-gap">
+          <button class="button primary" data-view-target="trackerView">Go to tracker page</button>
+          <button class="button secondary" data-view-target="gamesView">Try daily games</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="gamesView" class="view">
+      <div class="stack-lg">
+        <div class="card page-card">
+          <span class="eyebrow">Daily Games</span>
+          <h2>Simple daily brain exercises</h2>
+          <p>These activities are meant to be short, gentle, and repeatable. Scores are saved locally for tracking.</p>
+        </div>
+
+        <div class="game-grid">
+          <article class="card game-card">
+            <span class="eyebrow">Game 1</span>
+            <h3>Word Recall</h3>
+            <p>Memorise three words. After a few seconds, type back as many as you can remember.</p>
+            <div id="wordRecallBox" class="game-box"></div>
+            <div class="hero-actions">
+              <button id="startWordGameBtn" class="button primary" type="button">Start word recall</button>
+            </div>
+          </article>
+
+          <article class="card game-card">
+            <span class="eyebrow">Game 2</span>
+            <h3>Sequence Tap</h3>
+            <p>Watch the number sequence and repeat it in the same order. Each round gets slightly longer.</p>
+            <div id="sequenceStatus" class="game-box">Press start to begin.</div>
+            <div class="sequence-pad">
+              <button class="tile-btn" data-seq-value="1">1</button>
+              <button class="tile-btn" data-seq-value="2">2</button>
+              <button class="tile-btn" data-seq-value="3">3</button>
+              <button class="tile-btn" data-seq-value="4">4</button>
+            </div>
+            <div class="hero-actions">
+              <button id="startSequenceBtn" class="button primary" type="button">Start sequence game</button>
+            </div>
+          </article>
+        </div>
+
+        <section class="card">
+          <span class="eyebrow">Saved game history</span>
+          <h3>Recent daily game records</h3>
+          <div id="gameHistoryEmpty" class="empty-state">No daily game records yet.</div>
+          <div id="gameHistoryList" class="history-list"></div>
+        </section>
+      </div>
+    </section>
+
+    <section id="trackerView" class="view">
+      <div class="stack-lg">
+        <section class="card page-card">
+          <div class="section-header">
+            <div>
+              <span class="eyebrow">Tracker Page</span>
+              <h2>Saved screening history</h2>
+              <p>Use this page to compare previous AI screening results on this device.</p>
+            </div>
+            <button id="clearHistoryBtn" class="button ghost" type="button">Clear quiz history</button>
+          </div>
+          <div id="historyEmpty" class="empty-state">No saved screenings yet.</div>
+          <div id="historyList" class="history-list"></div>
+        </section>
+
+        <section class="card page-card">
+          <div class="section-header">
+            <div>
+              <span class="eyebrow">Patterns</span>
+              <h2>Training dataset insights</h2>
+              <p>These comparisons help explain which features differ between diagnosed and non-diagnosed groups.</p>
+            </div>
+          </div>
+          <div id="insightsGrid" class="insights-grid"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
